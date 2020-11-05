@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List of Persons-->
+        <!--Persons List-->
         <scene sceneID="KMA-zB-Csv">
             <objects>
                 <tableViewController id="9fc-Yq-cKS" customClass="PersonsListViewController" customModule="HW2_7_PersonsList" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                             <outlet property="delegate" destination="9fc-Yq-cKS" id="3nR-e9-eaK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="List of Persons" id="gJc-Nb-rta"/>
+                    <navigationItem key="navigationItem" title="Persons List" id="gJc-Nb-rta"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3T-MA-Amo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,7 +93,7 @@
             </objects>
             <point key="canvasLocation" x="2910" y="45"/>
         </scene>
-        <!--Segmented Person Info-->
+        <!--Sectioned Persons List-->
         <scene sceneID="uag-Xd-ep9">
             <objects>
                 <tableViewController id="fnb-aP-gjt" customClass="SectionedPersonListViewController" customModule="HW2_7_PersonsList" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,7 +125,7 @@
                             <outlet property="delegate" destination="fnb-aP-gjt" id="uxF-Fc-EvN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Segmented Person Info" id="vGc-87-on8"/>
+                    <navigationItem key="navigationItem" title="Sectioned Persons List" id="vGc-87-on8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x19-fb-c6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
