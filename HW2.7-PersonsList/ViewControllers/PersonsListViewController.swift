@@ -9,8 +9,7 @@ import UIKit
 
 class PersonsListViewController: UITableViewController {
     
-    let personsList = Person.getPersons()
-//    var personsList: [Person]!
+    var personsList: [Person]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,23 +29,10 @@ class PersonsListViewController: UITableViewController {
     }
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let controllers = tabBarController?.viewControllers else { return }
+        guard let personContactsVC = segue.destination as? PersonContactsViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        
-        for controller in controllers {
-            if let controller = controller as? UINavigationController {
-                if let controller = segue.destination as? PersonContactsViewController {
-                    controller.person = personsList[indexPath.row]
-                
-                // Кажется вообще не вошел в этот if. Т.к. title не изменяется
-                } else if let controller = controller.topViewController as? SectionedPersonListViewController {
-                    controller.title = "AAAAA"
-                    controller.personsList = personsList
-                }
-            }
-        }
+        personContactsVC.person = personsList[indexPath.row]
     }
 
 }

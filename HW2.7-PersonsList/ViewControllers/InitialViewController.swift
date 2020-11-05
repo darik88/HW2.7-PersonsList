@@ -13,21 +13,18 @@ class InitialViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let arrayOfControllers = tabBarController?.viewControllers else { return }
         
-        // Падает при загрузке PersonListViewController. Массив personList = nil
-        for controller in arrayOfControllers {
-            if let controller = controller as? UINavigationController {
-                if let controller = controller.topViewController as? PersonsListViewController {
-//                    controller.personsList = personsList
-
+        guard let viewcontrollers = viewControllers else { return }
+        
+        for viewcontroller in viewcontrollers {
+            if let vc = viewcontroller as? UINavigationController {
+                if let personListVC = vc.topViewController as? PersonsListViewController {
+                    personListVC.personsList = personsList
+                } else if let sectionedVC = vc.topViewController as? SectionedPersonListViewController {
+                    sectionedVC.personsList = personsList
                 }
             }
         }
+        
     }
 }

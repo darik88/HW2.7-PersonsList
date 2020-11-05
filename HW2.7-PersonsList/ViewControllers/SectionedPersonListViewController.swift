@@ -9,15 +9,13 @@ import UIKit
 
 class SectionedPersonListViewController: UITableViewController {
     
-//    var person: Person!
-    var personsList = Person.getPersons()
-
+    var personsList: [Person]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return personsList.count
     }
@@ -31,7 +29,7 @@ class SectionedPersonListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let currentPerson = personsList[indexPath.section]
         if indexPath.row == 0 {
             cell.textLabel?.text = "☏ \(currentPerson.phone)"
